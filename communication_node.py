@@ -1,13 +1,14 @@
-import os
-import time
-import spacy
-import keras
-from gtts import gTTS
-import tensorflow as tf
 import speech_recognition as sr
-from spacytextblob.spacytextblob import SpacyPIPTextBlob
+import os
+import spacy
+from gtts import gTTS
+from spacytextblob.spacytextblob import SpacyTextBlob
+import time
 
-nlp = spacy.load("en_core_web_trf")  # more accurate
+import tensorflow as tf
+import keras
+
+nlp = spacy.load("en_core_web_sm")  # more accurate
 # nlp = spacy.load("es_dep_news_trf") # more accurate
 # nlp = spacy.load('es_core_news_sm') # faster
 nlp.add_pipe("spacytextblob")  # only works for english models, not Spanish ones yet!
